@@ -2,7 +2,7 @@ import { setCookieWithExpireHour } from 'https://jscroot.github.io/cookie/croot.
 
 //token
 export function getTokenFromAPI() {
-  const tokenUrl = "https://asia-southeast2-argon-fire-401902.cloudfunctions.net/postLoginEDUMAS";
+  const tokenUrl = "https://asia-southeast2-gisiqbal.cloudfunctions.net/Login-User";
   fetch(tokenUrl)
     .then(response => response.json())
     .then(tokenData => {
@@ -51,7 +51,7 @@ function ResponsePostLogin(response) {
   if (response && response.token) {
     // console.log('Token User:', response.token);
     setCookieWithExpireHour('Login', response.token, 2);
-    window.location.href = 'https://e-dumas-sukasari.my.id/dashboard/admin.html';
+    window.location.href = 'https://e-dumas-sukasari.my.id/dashboard/user.html';
 
     
     alert("Selamat Datang")
